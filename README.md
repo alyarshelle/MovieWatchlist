@@ -55,7 +55,7 @@ The application will be available at [http://127.0.0.1:5000](http://127.0.0.1:50
 
 ### Add Movies
 
-1. Once logged in, navigate to the "Add Movie" page, which can be accessed via the main menu or at `http://127.0.0.1:5000/add-movie`.
+1. Once logged in, navigate to the "Add Movie" page, which can be accessed via the main menu or at `http://127.0.0.1:5000/add`.
 2. Fill in the details of the movie you want to add, including the title, description, release year, and any other relevant information.
 3. Click "Save" to add the movie to your personal watchlist.
 
@@ -67,6 +67,6 @@ The application will be available at [http://127.0.0.1:5000](http://127.0.0.1:50
 
 ### Edit Movie Information
 
-1. To edit the details of a movie already on your watchlist, navigate to your watchlist at `http://127.0.0.1:5000/watchlist`.
+1. To edit the details of a movie already on your watchlist, navigate to your watchlist at `http://127.0.0.1:5000/edit/<string:_id>`.
 2. Find the movie you wish to edit and click the "Edit" button next to it.
 3. Update the movie details as needed and click "Save Changes" to update the information.
