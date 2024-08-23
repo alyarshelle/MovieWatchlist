@@ -30,10 +30,8 @@ Welcome to the Movie Watchlist App! This Flask-based web application allows user
 2. Next, create a virtual environment by running
    `python -m venv venv`.
 3. Activate the virtual environment by executing
-   ### on Windows
-   `venv\Scripts\activate`
-   ### on macOS/Linux
-   `source venv/bin/activate`
+   on Windows: `venv\Scripts\activate`
+   on macOS/Linux: `source venv/bin/activate`
 4. Install the required dependencies with
    `pip install -r requirements.txt`
 5. Set up the database using your preferred database
