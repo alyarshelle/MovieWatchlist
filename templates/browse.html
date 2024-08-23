@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{%- block head_content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/browse.css') }}">
+{% endblock %}
+
+{% block main_content %}
+<h1>{{ title }}</h1>
+
+    {% if movies %}
+        <ul class="movie-list">
+            {% for movie in movies %}
+            <li class="movie-item">
+                <a class="movie-link" href="{{ url_for('pages.movie', _id=movie._id) }}">
+                    <div class="movie-info">
+                        <h2 class="movie-title">{{ movie.title }}</h2>
+                        <p class="movie-details">Directed by {{ movie.director }} ({{ movie.year }})</p>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No movies available.</p>
+    {% endif %}
+
+{% endblock %}
