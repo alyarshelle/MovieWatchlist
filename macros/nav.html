@@ -1,0 +1,45 @@
+{% from 'macros/svgs.html' import moon, sun %}
+{% macro header(email, theme) %}
+
+<header class="header">
+    <div class="nav-container">
+        <a href="{{ url_for('pages.index') }}" class="header-logo">
+            {% if theme == 'dark' %}
+                <img src="/static/images/logoDark.png" alt="logo" class="logo-icon"/>
+            {% else %}
+                <img src="/static/images/logoLight.png" alt="logo" class="logo-icon"/>
+            {% endif %}
+            <span class="logo-name">SummitView</span>
+        </a>
+        <nav class="nav">
+            {% if not email %}
+                <a href="{{ url_for('pages.browse_movies') }}" class="nav-link {{ 'nav-link--active' if request.path == url_for('pages.browse_movies') }}">
+                    <span class="nav-item">Browse</span>
+                </a>
+                <a href="{{ url_for('pages.login')}}" class="nav-link {{ 'nav-link-active' if request.path == url_for('pages.login') }}"><span class="nav-item">Log In</span></a>
+                <a href="{{ url_for('pages.register') }}" class="nav-link {{ 'nav-link-active' if request.path == url_for('pages.register') }}">
+                    <span class="nav-item">Register</span>
+                </a>
+            {% else %}
+                <a href="{{ url_for('pages.browse_movies') }}" class="nav-link {{ 'nav-link--active' if request.path == url_for('pages.browse_movies') }}">
+                    <span class="nav-item">Browse</span>
+                </a>
+                <a href="{{ url_for('pages.index') }}" class="nav-link {{ 'nav-link--active' if request.path == url_for('pages.index') }}">
+                    <span class="nav-item">Movies</span>
+                </a>
+                <a href="{{ url_for('pages.logout') }}" class="nav-link"><span class="nav-item">Log Out</span></a>
+            {% endif %}
+            <a href="{{ url_for('pages.toggle_theme', current_page=request.path) }}" class="nav-link">
+                <span class="nav-item">
+                    {% if theme == 'dark' %}
+                        {{ sun("nav-icon") }}
+                    {% else %}
+                        {{ moon("nav-icon") }}
+                    {% endif %}
+                </span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+{% endmacro %}
