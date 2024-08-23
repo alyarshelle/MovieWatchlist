@@ -15,8 +15,7 @@ Welcome to the Movie Watchlist App! This Flask-based web application allows user
 ## Technologies Used
 
 - **Flask:** A lightweight WSGI web application framework for Python.
-- **SQLAlchemy:** ORM for managing database operations.
-- **SQLite:** Database engine used for storing user and movie data.
+- **MongoDB:** Database engine used for storing user and movie data.
 - **Jinja2:** Templating engine for rendering HTML.
 - **Bootstrap:** Front-end framework for styling.
 
